@@ -61,3 +61,10 @@ steps:
   inputs:
     command: 'custom'
     customCommand: 'run build'
+
+
+- task: PublishTestResults@2
+  displayName: Publish Results
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/TEST-*.xml'
