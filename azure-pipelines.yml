@@ -22,6 +22,41 @@ steps:
 
 
 - task: Npm@1
+  displayName: Install Gulp
+  inputs:
+    command: 'custom'
+    customCommand: 'install gulp'
+
+
+- task: Npm@1
+  displayName: Install Gulp Mocha
+  inputs:
+    command: 'custom'
+    customCommand: 'install gulp-mocha'
+
+
+- task: Npm@1
+  displayName: Install Junit Reporter
+  inputs:
+    command: 'custom'
+    customCommand: 'install mocha-junit-reporter'
+
+
+- task: Npm@1
+  displayName: Install Gulp Istanbul
+  inputs:
+    command: 'custom'
+    customCommand: 'install gulp-istanbul'
+
+
+- task: Npm@1
+  displayName: Install nyc
+  inputs:
+    command: 'custom'
+    customCommand: 'install nyc'
+
+
+- task: Npm@1
   displayName: NPM Build
   inputs:
     command: 'custom'
