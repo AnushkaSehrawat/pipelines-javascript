@@ -6,13 +6,10 @@
 trigger:
 - master
 
-stages:
-- stage: Build
-  jobs:
-  - job: Build
-    pool:
-      vmImage: 'ubuntu-latest'
-    steps:
+
+pool:
+  vmImage: 'ubuntu-latest'
+steps:
     - task: NodeTool@0
       inputs:
         versionSpec: '10.x'
@@ -68,17 +65,7 @@ stages:
         testResultsFiles: '**/TEST-*.xml'
 
 
-- stage: Test
-  jobs:
-  - job: Test
-    pool:
-      vmImage: 'ubuntu-latest'
 
-    steps:
-
-    - task: NodeTool@0
-      inputs:
-          versionSpec: '10.x'
-      displayName: 'Install Node.js'
+     
 
     
